@@ -1,0 +1,25 @@
+name: Mark Stale Issues and Pull Requests
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    name: Mark Stale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark Stale
+        uses: actions/stale@v10
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: 'Stale issue message'
+          stale-pr-message: 'Stale pull request message'
+          stale-issue-label: 'no-issue-activity'
+          stale-pr-label: 'no-pr-activity'
+          days-before-stale: 60
+          days-before-close: 5
