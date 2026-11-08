@@ -232,3 +232,8 @@ $RECYCLE.BIN/
 **/*.quarto_ipynb
 /_site/
 **/index.tex
+
+# Муҳити Python (скриптҳои кории курсӣ)
+.venv/
+__pycache__/
+*.pyc
