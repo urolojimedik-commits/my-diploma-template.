@@ -11,7 +11,8 @@
 | **`01_Elastografiya.docx`** | **Кори КУРСИИ ТАЙЁР** — мавзӯи 1, 35,6 саҳифа, 56 ҷадвал, 24 манбаъ |
 | [`01_Elastografiya/`](01_Elastografiya) | Ҳамон кор аз рӯи қисмҳо (7 файли `.md`) — барои таҳрир |
 | [`scripts/build_docx.py`](scripts/build_docx.py) | Markdown → Word бо вараки унвон, мундариҷа, рақами саҳифа, ҷадвалҳо |
-| [`scripts/check_coursework.py`](scripts/check_coursework.py) | Санҷиши худкор: ҳаҷм, сохтор, иқтибос, ҷумлаи дароз, ибораҳои холӣ |
+| [`scripts/check_coursework.py`](scripts/check_coursework.py) | Санҷиши мундариҷа: ҳаҷм, сохтор, иқтибос, ҷумлаи дароз, ибораҳои холӣ |
+| [`scripts/validate_docx.py`](scripts/validate_docx.py) | Санҷиши ТЕХНИКИИ файли Word: OOXML, майдонҳо, settings.xml, ҷадвалҳо |
 
 ## Кори тайёр — мавзӯи 1
 
@@ -52,8 +53,11 @@ echo "Ултрасадои контрастӣ (CEUS): асосҳои метод 
 # 3. Файлҳоро нависед (00_Muqaddima.md, 10_Bandi_1.md, …)
 #    — матнро аз промт гиред ва дар ҳамин файлҳо гузоред
 
-# 4. Файли Word созед ва санҷед
+# 4. Файли Word созед
 .venv/bin/python coursework/scripts/build_docx.py coursework/02_CEUS
+
+# 5. ҲАТМАН санҷед (техникӣ + мундариҷа)
+.venv/bin/python coursework/scripts/validate_docx.py coursework/02_CEUS.docx
 .venv/bin/python coursework/scripts/check_coursework.py coursework/02_CEUS/00_Muqaddima.md
 ```
 
@@ -86,3 +90,25 @@ echo "Ултрасадои контрастӣ (CEUS): асосҳои метод 
 ## ⚠️ Масъулият
 
 Модел нақша, мантиқ ва матн медиҳад. Масъулияти рақамҳо, санаҳои нашр, номҳо ва адолати хулоса **бо иҷрокунанда** мемонад. Дар ин кор ҳамаи маълумоти клиникии воқеӣ бо «______» ишора шудааст — онҳоро аз сарчашмаи аслӣ пур кунед. Пеш аз супоридан ҳадди ақал ду ҷойро аз манбаи аслӣ санҷед.
+
+## ⚠️ Ҳатман пеш аз додан санҷед
+
+Файли `.docx`-ро бе санҷиш ба корбар додан мумкин нест. Скрипт `validate_docx.py` он хатоҳоеро меёбад, ки Word файлро «вайрон» ҳисобида кушода наметавонад:
+
+```bash
+.venv/bin/python coursework/scripts/validate_docx.py файл.docx
+```
+
+Месанҷад:
+- тартиби унсурҳо дар `settings.xml` (схемаи OOXML),
+- ҷудо будани қисмҳои майдон (`fldChar`, `instrText`) дар run-ҳои алоҳида,
+- тартиби фарзандони `rPr` ва `pPr`,
+- newline-и хом дар `<w:t>`,
+- `r:id`-ҳои муайяннашуда,
+- ҷадвалҳо бе `<w:tblGrid>`.
+
+**Ду хатое, ки воқеан рӯй доданд** (ислоҳ шуданд):
+1. `w:updateFields` дар охири `settings.xml` гузошта мешуд — бояд пеш аз `w:compat` бошад.
+2. Ҳамаи қисмҳои майдон (begin/instrText/separate/end) дар **як** run буданд — ҳар як бояд дар run-и алоҳида бошад.
+
+Ҳар ду боиси он мешуданд, ки Word файлро кушода натавонад.

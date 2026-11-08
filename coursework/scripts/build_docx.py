@@ -112,41 +112,76 @@ def set_run_font(run, size: Pt | None = None, bold: bool | None = None, italic: 
 
 
 def add_field(paragraph, instr: str, placeholder: str = ""):
-    """Майдони Word (барои рақами саҳифа ва мундариҷа)."""
-    run = paragraph.add_run()
+    """Майдони Word (барои рақами саҳифа ва мундариҷа).
+
+    Ҳар қисми майдон (begin / instrText / separate / натиҷа / end)
+    дар run-и АЛОҲИДА гузошта мешавад — талаботи OOXML.
+    """
+    def _mkrun():
+        r = paragraph.add_run()
+        set_run_font(r, BODY_SIZE)
+        return r
+
+    r1 = _mkrun()
     fld_begin = OxmlElement("w:fldChar")
     fld_begin.set(qn("w:fldCharType"), "begin")
     fld_begin.set(qn("w:dirty"), "true")
+    r1._r.append(fld_begin)
 
+    r2 = _mkrun()
     instr_el = OxmlElement("w:instrText")
     instr_el.set(qn("xml:space"), "preserve")
     instr_el.text = instr
+    r2._r.append(instr_el)
 
+    r3 = _mkrun()
     fld_sep = OxmlElement("w:fldChar")
     fld_sep.set(qn("w:fldCharType"), "separate")
+    r3._r.append(fld_sep)
 
-    text_el = OxmlElement("w:t")
-    text_el.text = placeholder
+    if placeholder:
+        r4 = _mkrun()
+        text_el = OxmlElement("w:t")
+        text_el.set(qn("xml:space"), "preserve")
+        text_el.text = placeholder
+        r4._r.append(text_el)
 
+    r5 = _mkrun()
     fld_end = OxmlElement("w:fldChar")
     fld_end.set(qn("w:fldCharType"), "end")
-
-    run._r.append(fld_begin)
-    run._r.append(instr_el)
-    run._r.append(fld_sep)
-    run._r.append(text_el)
-    run._r.append(fld_end)
-    return run
+    r5._r.append(fld_end)
+    return r1
 
 
 def force_update_fields(doc):
-    """Word ҳангоми кушодан майдонҳоро (мундариҷа) нав мекунад."""
+    """Word ҳангоми кушодан майдонҳоро (мундариҷа) нав мекунад.
+
+    Муҳим: тибқи схемаи OOXML унсури <w:updateFields> бояд ПЕШ аз
+    <w:compat>, <w:rsids>, <w:themeFontLang> ва <w:clrSchemeMapping>
+    бошад. Агар онро дар охири settings.xml гузорем, Word файлро
+    «вайрон» ҳисобида кушода наметавонад.
+    """
     settings = doc.settings.element
-    upd = settings.find(qn("w:updateFields"))
-    if upd is None:
-        upd = OxmlElement("w:updateFields")
-        settings.append(upd)
+    for old in settings.findall(qn("w:updateFields")):
+        settings.remove(old)
+
+    upd = OxmlElement("w:updateFields")
     upd.set(qn("w:val"), "true")
+
+    # Ҷои дуруст: баъд аз w:proofState/w:defaultTabStop, пеш аз w:compat
+    anchor = None
+    for tag in ("w:compat", "w:rsids", "w:themeFontLang", "w:clrSchemeMapping",
+                "w:mathPr", "w:zoom", "w:proofState"):
+        el = settings.find(qn(tag))
+        if el is not None:
+            anchor = el
+            break
+
+    if anchor is not None:
+        anchor.addprevious(upd)
+    else:
+        settings.insert(0, upd)
+    return upd
 
 
 # --------------------------------------------------------------------------
