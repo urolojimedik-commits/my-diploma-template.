@@ -401,7 +401,9 @@ def add_table(doc, rows, caption: str | None = None):
     set_run_font(r, Pt(6))
 
 
-CAPTION_RE = re.compile(r"^(Ҷадвали|Шакли|Диаграмма)\s+\d+\.\d+", re.IGNORECASE)
+CAPTION_RE = re.compile(
+    r"^(Ҷадвали|Шакли|Диаграмма)\s+([А-ЯЁA-Z]|\d+)\.\d+", re.IGNORECASE
+)
 
 
 def convert(md_path: Path, out_path: Path, topic: str | None, with_title: bool):
