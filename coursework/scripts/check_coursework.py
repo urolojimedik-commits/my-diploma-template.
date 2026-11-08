@@ -40,17 +40,43 @@ CITATION_RE = re.compile(r"\[\d+(\s*[,;]\s*\d+)*(\s*,\s*\d+(-\d+)?-?б\.)?\]")
 TABLE_CAPTION_RE = re.compile(r"^Ҷадвали\s+\d+\.\d+", re.MULTILINE)
 
 
-def strip_markup(text: str) -> str:
+def strip_markup(text: str, keep_tables: bool = False) -> str:
+    """Markdown-ро ба матни оддӣ табдил медиҳад.
+
+    keep_tables=True — матни ҷадвалҳо низ мемонад (барои ҳисоби ҳаҷм,
+    зеро Word онро дар «Characters (with spaces)» мешуморад).
+    """
     text = re.sub(r"```.*?```", "", text, flags=re.S)
-    text = re.sub(r"\|[^\n]*\|", " ", text)          # сатрҳои ҷадвал
+    if keep_tables:
+        # сатрҳои ҷудокунандаи ҷадвал (| :--- | --- |) хориҷ мешаванд
+        text = re.sub(r"^\s*\|[\s:|-]+\|\s*$", "", text, flags=re.M)
+        text = re.sub(r"\|", " ", text)
+    else:
+        text = re.sub(r"\|[^\n]*\|", " ", text)
     text = re.sub(r"^#{1,6}\s*", "", text, flags=re.M)
     text = re.sub(r"[*_`>]", "", text)
     return text
 
 
 def sentences(text: str):
+    """Ҷумлаҳои воқеиро ҷудо мекунад.
+
+    Танҳо порчаҳое ҳисобида мешаванд, ки:
+      * бо аломати хотима (. ! ? …) тамом мешаванд,
+      * на кам аз 4 калима доранд.
+    Ҳамин тавр сарлавҳаҳо, номгӯйҳо ва порчаҳои кӯтоҳи ҷадвалӣ
+    ба ҳисоби миёнаи дарозии ҷумла ворид намешаванд.
+    """
     parts = re.split(r"(?<=[.!?…])\s+|\n+", text)
-    return [p.strip() for p in parts if len(p.split()) >= 2]
+    out = []
+    for p in parts:
+        p = p.strip()
+        if not p or not re.search(r"[.!?…]$", p):
+            continue
+        n = len(p.split())
+        if n >= 4:
+            out.append(p)
+    return out
 
 
 def section_ranges(lines):
@@ -67,7 +93,8 @@ def section_ranges(lines):
 def main(path: Path):
     raw = path.read_text(encoding="utf-8")
     lines = raw.splitlines()
-    plain = strip_markup(raw)
+    plain = strip_markup(raw, keep_tables=True)
+    plain_nometa = strip_markup(raw)
 
     body = plain
     body = body.replace("МУНДАРИҶА", "")
@@ -103,7 +130,7 @@ def main(path: Path):
                 re.findall(r"^Ҷадвали\s+\d+\.\d+", txt, flags=re.MULTILINE)
             )
 
-    sents = sentences(plain)
+    sents = sentences(plain_nometa)
     lens = [len(s.split()) for s in sents]
     avg = sum(lens) / len(lens) if lens else 0
     too_long = [s for s in sents if len(s.split()) > 18]

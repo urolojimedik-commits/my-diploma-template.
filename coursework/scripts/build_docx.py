@@ -72,6 +72,11 @@ INSTITUTION = {
     "placeholders": "______",
 }
 
+# Барои ҳисоби тахминӣ: калимаи тоҷикӣ ба ҳисоби миёна ~5,3 аломат,
+# саҳифаи A4 (TNR 14, 1,5) ~1900 аломат мегирад.
+CHARS_PER_WORD = 5.3
+CHARS_PER_PAGE = 1900
+
 FONT = "Times New Roman"
 BODY_SIZE = Pt(14)
 TABLE_SIZE = Pt(12)
@@ -517,8 +522,16 @@ def convert(md_path: Path, out_path: Path, topic: str | None, with_title: bool):
     return out_path
 
 
-def extract_topic(md_text: str) -> str | None:
-    """Мавзӯъро аз сатри «Мавзӯъ: ...» ё аз аввалин сарлавҳаи # мегирад."""
+def extract_topic(md_text: str, base: Path | None = None) -> str | None:
+    """Мавзӯъро меҷӯяд: topic.txt → сатри «Мавзӯъ: ...» → аввалин сарлавҳаи #."""
+    if base is not None:
+        folder = base.parent if base.is_file() else base
+        topic_file = folder / "topic.txt"
+        if topic_file.exists():
+            text = topic_file.read_text(encoding="utf-8").strip()
+            if text:
+                return text.splitlines()[0].strip()
+
     for line in md_text.splitlines():
         m = re.match(r"^\s*Мавзӯъ\s*:\s*(.+)$", line, re.IGNORECASE)
         if m:
@@ -530,25 +543,60 @@ def extract_topic(md_text: str) -> str | None:
     return None
 
 
+def collect_sources(paths: list[Path]) -> tuple[list[Path], Path]:
+    """Як файл, якчанд файл ё ҷузвдонро ба рӯйхати тартибдодашуда табдил медиҳад."""
+    files: list[Path] = []
+    base: Path | None = None
+    for p in paths:
+        if p.is_dir():
+            base = p
+            files.extend(sorted([f for f in p.iterdir() if f.suffix == ".md"]))
+        elif p.is_file():
+            if base is None:
+                base = p
+            files.append(p)
+        else:
+            sys.exit(f"Ёфт нашуд: {p}")
+    if not files:
+        sys.exit("Ягон файли .md ёфт нашуд.")
+    return files, base
+
+
 def main():
     ap = argparse.ArgumentParser(description="Markdown → .docx барои кори курсӣ")
-    ap.add_argument("source", type=Path, help="файли .md")
+    ap.add_argument(
+        "source", type=Path, nargs="+",
+        help="файли .md ё ҷузвдони дорои 00_*.md, 10_*.md, …",
+    )
     ap.add_argument("-o", "--output", type=Path, default=None, help="файли .docx")
     ap.add_argument("--topic", default=None, help="мавзӯъ барои вараки унвон")
     ap.add_argument("--no-title", action="store_true", help="бе вараки унвон ва мундариҷа")
     args = ap.parse_args()
 
-    if not args.source.exists():
-        sys.exit(f"Файл ёфт нашуд: {args.source}")
+    files, base = collect_sources(args.source)
 
-    out = args.output or args.source.with_suffix(".docx")
-    topic = args.topic or extract_topic(args.source.read_text(encoding="utf-8"))
-    path = convert(args.source, out, topic, with_title=not args.no_title)
+    # Ҳамаи файлҳоро ба як файли муваққатӣ ҷамъ мекунем
+    merged = "\n\n".join(f.read_text(encoding="utf-8") for f in files)
+    tmp = Path(".build_merged.md")
+    tmp.write_text(merged, encoding="utf-8")
 
-    words = len(args.source.read_text(encoding="utf-8").split())
+    if args.output:
+        out = args.output
+    elif base is not None and base.is_dir():
+        out = base.parent / (base.name + ".docx")
+    else:
+        out = base.with_suffix(".docx") if base else Path("coursework.docx")
+
+    topic = args.topic or extract_topic(merged, base)
+    path = convert(tmp, out, topic, with_title=not args.no_title)
+    tmp.unlink(missing_ok=True)
+
+    words = len(merged.split())
     print(f"✅ Тайёр: {path}")
+    print(f"   Қисмҳо: {len(files)} файл ({', '.join(f.name for f in files)})")
     print(f"   Мавзӯъ: {topic or '—'}")
-    print(f"   Калимаҳо: {words} (~{round(words * 6.5 / 1900, 1)} саҳифа)")
+    pages = words * CHARS_PER_WORD / CHARS_PER_PAGE
+    print(f"   Калимаҳо: {words} (~{round(pages, 1)} саҳифа)")
 
 
 if __name__ == "__main__":
