@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <div class="alert alert-danger">
+    <h5>Ошибка при сборке</h5>
+    <p><b>ID:</b> {{ job.job_id }}<br><b>Тема:</b> {{ job.topic }}</p>
+    <pre class="bg-dark text-light p-3 rounded">{{ job.error }}</pre>
+    <details><summary>Traceback</summary><pre class="bg-light p-2">{{ job.traceback }}</pre></details>
+    <a href="/" class="btn btn-secondary mt-3">На главную</a>
+  </div>
+</div>
+{% endblock %}

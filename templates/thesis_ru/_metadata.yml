@@ -1,0 +1,23 @@
+title: "Тема дипломной работы"
+subtitle: "Выпускная квалификационная работа"
+author:
+  - name: "Иванов И.И."
+    affiliation: "Российский государственный университет"
+date: "2026"
+lang: ru
+language:
+  title-block-author-single: "Автор"
+  crossref-fig-title: "Рисунок"
+  crossref-tbl-title: "Таблица"
+  crossref-fig-prefix: "Рисунок"
+  crossref-tbl-prefix: "Таблица"
+bibliography: references.bib
+csl: ../../assets/csl/chicago-author-date.csl
+toc: true
+toc-title: "Содержание"
+lof: true
+lot: true
+abstract-title: "Аннотация"
+keywords: [цифровизация, государственное управление, информационные системы]
+abstract: "Аннотация на русском языке."
+thanks: "Научный руководитель: Петров П.П., к.т.н., доцент"

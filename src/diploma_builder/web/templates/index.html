@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+  <div class="container">
+    <h1><i class="bi bi-stars"></i> Система автоматизации курсовых и дипломных работ</h1>
+    <p class="lead mb-0">Тема → план → реальные источники → академический текст → графики → DOCX & PDF (ГОСТ) — за минуты</p>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header bg-white">
+          <h5 class="mb-0"><i class="bi bi-pencil-square"></i> 1. Введите тему научной работы</h5>
+        </div>
+        <div class="card-body">
+          <form method="post" action="/build">
+            <div class="mb-3">
+              <label class="form-label">Тема работы <span class="text-danger">*</span></label>
+              <input type="text" name="topic" class="form-control form-control-lg" placeholder="Например: Цифровая трансформация государственного управления в Российской Федерации" required minlength="10" value="{{ request.form.topic or '' }}">
+              <div class="form-text">Поддерживается русский язык. Чем точнее формулировка, тем лучше план и поиск источников.</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Тип работы</label>
+                <select name="work_type" class="form-select">
+                  <option value="курсовая">Курсовая работа (30 стр.)</option>
+                  <option value="диплом" selected>Диплом / ВКР (60–70 стр.)</option>
+                  <option value="магистерская">Магистерская диссертация (90 стр.)</option>
+                  <option value="вкр_бакалавр">ВКР бакалавра</option>
+                  <option value="статья">Научная статья</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Дисциплина</label>
+                <input type="text" name="discipline" class="form-control" value="Информационные системы" placeholder="Например: Экономика, Право, Педагогика">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Автор (ФИО, группа)</label>
+              <input type="text" name="author" class="form-control" value="Иванов И.И., ИВТ-21" placeholder="Иванов И.И., ИВТ-21">
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" name="verify" id="verify">
+              <label class="form-check-label" for="verify">Проверять DOI через Crossref (медленнее, но надёжнее)</label>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-rocket-takeoff"></i> Создать работу → DOCX & PDF</button>
+            </div>
+            <div class="form-text text-center mt-2">Генерация занимает ~30–60 сек: поиск реальных источников + графики + сборка</div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h6><i class="bi bi-lightbulb"></i> Примеры тем для теста</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-sm btn-outline-secondary topic-example">Цифровизация государственного управления в РФ</button>
+            <button class="btn btn-sm btn-outline-secondary topic-example">Машинное обучение в финансовом прогнозировании</button>
+            <button class="btn btn-sm btn-outline-secondary topic-example">Развитие электронного документооборота в организации</button>
+            <button class="btn btn-sm btn-outline-secondary topic-example">Кибербезопасность критической информационной инфраструктуры</button>
+            <button class="btn btn-sm btn-outline-secondary topic-example">Маркетинговая стратегия продвижения IT-продукта</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header bg-white"><h6 class="mb-0"><i class="bi bi-list-check"></i> Что умеет система</h6></div>
+        <div class="card-body">
+          <ol class="mb-0">
+            <li class="mb-2">Принимает тему на русском</li>
+            <li class="mb-2">Создаёт подробный план глав (ГОСТ-структура)</li>
+            <li class="mb-2">Ищет <b>реальные</b> источники через Crossref/OpenAlex (с DOI)</li>
+            <li class="mb-2">Пишет академический текст с <code>[@cite]</code></li>
+            <li class="mb-2">Строит таблицы, графики, диаграммы (matplotlib) с подписями «Рисунок N — ...»</li>
+            <li class="mb-2">Нумерует рисунки/таблицы, формирует список литературы по ГОСТ Р 7.0.5-2018</li>
+            <li class="mb-2">Собирает <span class="badge bg-primary">DOCX</span> и <span class="badge bg-danger">PDF</span> (Times New Roman 14pt, поля ГОСТ)</li>
+            <li class="mb-2">Поддерживает русский язык и скачивание</li>
+            <li>Опционально — Quarto/Pandoc</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card mt-3 border-warning">
+        <div class="card-header bg-warning bg-opacity-25"><h6 class="mb-0"><i class="bi bi-shield-check"></i> Академическая добросовестность</h6></div>
+        <div class="card-body">
+          <small>
+            Система <b>не выдумывает</b> DOI, статистику и результаты.<br>
+            • Каждый DOI проверяется через <code>api.crossref.org/works/{DOI}</code><br>
+            • Графики с учебными данными подписываются: <i>«учебный пример, данные условные»</i><br>
+            • Реальные данные — из Росстата/ЦБ или отчётности организации (с указанием источника)
+          </small>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-header bg-white"><h6 class="mb-0"><i class="bi bi-terminal"></i> CLI</h6></div>
+        <div class="card-body">
+          <pre class="bg-dark text-light p-2 rounded small mb-0" style="font-size: 0.75rem;">pip install -r requirements.txt
+python -m diploma_builder.cli \
+  --topic "Цифровизация ..." \
+  --type диплом --build
+
+# или
+python -m diploma_builder.cli search \
+  --topic "digitalization" --rows 10</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-white"><h6 class="mb-0"><i class="bi bi-diagram-3"></i> Архитектура</h6></div>
+        <div class="card-body text-center">
+          <span class="badge bg-primary">Тема</span> → <span class="badge bg-secondary">Planner</span> → <span class="badge bg-success">Crossref/OpenAlex</span> → <span class="badge bg-info text-dark">Writer</span> → <span class="badge bg-warning text-dark">Figures (matplotlib)</span> → <span class="badge bg-danger">DOCX (python-docx)</span> + <span class="badge bg-dark">PDF (reportlab)</span> + <span class="badge bg-light text-dark border">Quarto</span>
+          <div class="mt-2"><small class="text-muted">Все модули в <code>src/diploma_builder/</code> • Поддержка Flask веб-интерфейса • Скачивание готовых документов</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+document.querySelectorAll('.topic-example').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    e.preventDefault();
+    document.querySelector('input[name=topic]').value = btn.textContent;
+    document.querySelector('input[name=topic]').focus();
+  });
+});
+</script>
+{% endblock %}

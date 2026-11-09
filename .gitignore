@@ -232,3 +232,9 @@ $RECYCLE.BIN/
 **/*.quarto_ipynb
 /_site/
 **/index.tex
+__pycache__/
+*.pyc
+output/
+.venv/
+venv/
+__pycache__/

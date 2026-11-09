@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body text-center py-5">
+      <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;"><span class="visually-hidden">Загрузка...</span></div>
+      <h4>Создаём работу: «{{ topic }}»</h4>
+      <p class="text-muted">Ищем реальные источники, пишем главы, строим графики, собираем DOCX и PDF…</p>
+      <div class="progress mb-3" style="height: 22px;">
+        <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 10%">10%</div>
+      </div>
+      <p id="log" class="small text-muted">Инициализация...</p>
+      <p class="small text-muted">ID задачи: <code>{{ job_id }}</code> • Автообновление каждые 2 сек.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+let pct = 10;
+const bar = document.getElementById('progress');
+const log = document.getElementById('log');
+const steps = [
+  "📋 Генерация плана глав...",
+  "🔍 Поиск источников в Crossref/OpenAlex...",
+  "📚 Формирование библиографии (ГОСТ)...",
+  "📊 Построение графиков и диаграмм (matplotlib)...",
+  "✍️ Написание академического текста...",
+  "📄 Сборка DOCX (ГОСТ)...",
+  "📕 Сборка PDF (ГОСТ)...",
+  "📦 Генерация Quarto проекта...",
+  "✅ Почти готово..."
+];
+let stepIdx = 0;
+function tick(){
+  if(pct < 92){
+    pct += Math.random()*6;
+    if(pct>90) pct=90;
+    bar.style.width = pct.toFixed(0)+'%';
+    bar.textContent = pct.toFixed(0)+'%';
+    if(Math.random()>0.6 && stepIdx < steps.length){
+      log.textContent = steps[stepIdx++];
+    }
+  }
+}
+setInterval(tick, 1200);
+
+async function poll(){
+  try{
+    const r = await fetch('/status/{{ job_id }}');
+    const j = await r.json();
+    if(j.status==='done'){
+      window.location.href='/result/{{ job_id }}';
+    } else if(j.status==='error'){
+      document.querySelector('.card-body').innerHTML = `<div class="alert alert-danger"><h5>Ошибка</h5><pre>${j.error}</pre><a href="/" class="btn btn-secondary">На главную</a></div>`;
+    } else {
+      setTimeout(poll, 2000);
+    }
+  }catch(e){ setTimeout(poll, 3000); }
+}
+setTimeout(poll, 2500);
+</script>
+{% endblock %}

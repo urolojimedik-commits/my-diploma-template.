@@ -1,0 +1,16 @@
+---
+title: "Пример Quarto на русском"
+format: html
+---
+
+{{< include 00_Введение.md >}}
+
+{{< include 01_Глава_1.md >}}
+
+{{< include 02_Глава_2.md >}}
+
+{{< include 03_Глава_3.md >}}
+
+{{< include 50_Заключение.md >}}
+
+{{< include 99_Библиография.md >}}

@@ -1,0 +1,68 @@
+# _metadata.yml — ГОСТ
+title: "Маркетинговая стратегия продвижения IT-продукта на российском рынке"
+subtitle: "Курсовая работа"
+author:
+  - name: "Иванов И.И., ИВТ-21"
+    affiliation: "Российский государственный университет"
+date: "2026"
+date-format: "DD MMMM YYYY"
+lang: ru
+language:
+  title-block-author-single: "Автор"
+  title-block-published: "Дата"
+  crossref-fig-title: "Рисунок"
+  crossref-tbl-title: "Таблица"
+  crossref-fig-prefix: "Рисунок"
+  crossref-tbl-prefix: "Таблица"
+
+bibliography: references.bib
+csl: ../../assets/csl/gost-r-7-0-5-2018.csl
+link-citations: true
+toc: true
+toc-depth: 2
+toc-title: "Содержание"
+lof: true
+lofTitle: "Список рисунков"
+lot: true
+lotTitle: "Список таблиц"
+abstract-title: "Аннотация"
+keywords: ["маркетинговая", "стратегия", "продвижения", "продукта", "российском"]
+abstract: |
+  Работа посвящена теме «Маркетинговая стратегия продвижения IT-продукта на российском рынке». Цель — Цель работы — комплексное исследование темы «Маркетинговая стратегия продвижения IT-продукта на российском рынке», выявление ключевых проблем и разработка практических рекомендаций по совершенствованию исследуемого объекта.. Практическая значимость — рекомендации для организаций.
+thanks: "Научный руководитель: Петров П.П., к.т.н., доцент"
+
+# ГОСТ формат
+format:
+  html:
+    theme: cosmo
+    toc: true
+    lang: ru
+  docx:
+    output-file: thesis.docx
+    toc: true
+  pdf:
+    output-file: thesis.pdf
+    pdf-engine: xelatex
+    toc: true
+    keep-tex: false
+    documentclass: scrbook
+    classoption: [a4paper, 14pt, titlepage, openany, DIV=calc, toc=listof]
+    geometry: [a4paper, bindingoffset=0mm, inner=30mm, outer=15mm, top=20mm, bottom=20mm]
+    mainfont: "Times New Roman"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    linestretch: 1.5
+    toc-depth: 2
+    lof: true
+    lot: true
+    include-in-header:
+      text: |
+        \usepackage{polyglossia}
+        \setdefaultlanguage{russian}
+        \usepackage{indentfirst}
+        \setlength{\parindent}{1.25cm}
+        \usepackage{chngcntr}
+        \counterwithout{figure}{chapter}
+        \counterwithout{table}{chapter}
+  latex:
+    output-file: thesis.tex

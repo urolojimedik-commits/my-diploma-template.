@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-white"><h5><i class="bi bi-search"></i> Поиск реальных научных источников (Crossref + OpenAlex)</h5></div>
+    <div class="card-body">
+      <form method="post" class="row g-2">
+        <div class="col-md-10"><input name="query" class="form-control" placeholder="Например: digitalization public administration" value="{{ query }}" required></div>
+        <div class="col-md-2"><button class="btn btn-primary w-100">Искать</button></div>
+      </form>
+      <div class="form-text">Ищет только реальные публикации с DOI. Учебные примеры помечаются явно. Проверка DOI через api.crossref.org</div>
+    </div>
+  </div>
+
+  {% if results is not none %}
+  <div class="card mt-3">
+    <div class="card-header bg-white">Результаты — {{ results|length }}</div>
+    <div class="card-body">
+      {% for r in results %}
+        <div class="mb-3 pb-2 border-bottom">
+          <div><strong>{{ loop.index }}. {{ r.title }}</strong> <span class="badge {{ 'bg-success' if r.verified else 'bg-secondary' }}">{{ r.key }}</span></div>
+          <div class="small text-muted">{{ r.authors|join(', ') }} — {{ r.year }} — {{ r.journal or r.publisher or '' }}</div>
+          {% if r.doi %}<div class="small"><a href="https://doi.org/{{ r.doi }}" target="_blank">https://doi.org/{{ r.doi }}</a> {% if r.verified %}✓ проверен{% endif %}</div>{% endif %}
+          <details><summary class="small">BibTeX</summary><pre class="bg-light p-2 small">{{ r.to_bibtex() }}</pre></details>
+        </div>
+      {% endfor %}
+      {% if not results %}<p class="text-muted">Ничего не найдено — проверьте формулировку (попробуйте английский запрос)</p>{% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
