@@ -1,0 +1,281 @@
+{
+  "_meta": {
+    "work": "Эластография дар ташхиси ултрасадоӣ: принсип, намудҳо ва имкониятҳои клиникӣ",
+    "verified_at": "2026-11-09",
+    "verified_via": "Europe PMC REST API (europepmc.org) + саҳифаи расмии ВОЗ",
+    "rule": "Ҳар сабт танҳо пас аз санҷиши DOI/PMID ворид шудааст. Агар сабт тасдиқ нашуда бошад, истифода намешавад."
+  },
+  "sources": [
+    {
+      "key": "ophir1991",
+      "authors": [{"family": "Ophir", "given": "J"}, {"family": "Cespedes", "given": "I"}, {"family": "Ponnekanti", "given": "H"}, {"family": "Yazdi", "given": "Y"}, {"family": "Li", "given": "X"}],
+      "title": "Elastography: a quantitative method for imaging the elasticity of biological tissues",
+      "year": 1991, "venue": "Ultrason Imaging", "volume": "13", "number": "2", "pages": "111-134",
+      "doi": "10.1177/016173469101300201", "pmid": "1858217", "type": "article-journal",
+      "facts": ["Аввалин тавсифи усули эластографияи квазистатикӣ (strain elastography): фишурдани бофта ва ҳисоб кардани деформатсия."]
+    },
+    {
+      "key": "sarvazyan1998",
+      "authors": [{"family": "Sarvazyan", "given": "A P"}, {"family": "Rudenko", "given": "O V"}, {"family": "Swanson", "given": "S D"}, {"family": "Fowlkes", "given": "J B"}, {"family": "Emelianov", "given": "S Y"}],
+      "title": "Shear wave elasticity imaging: a new ultrasonic technology of medical diagnostics",
+      "year": 1998, "venue": "Ultrasound Med Biol", "volume": "24", "number": "9", "pages": "1419-1435",
+      "doi": "10.1016/s0301-5629(98)00110-0", "pmid": "10385964", "type": "article-journal",
+      "facts": ["Асоси физикии тасвирбардории мавҷҳои буриш (shear wave elasticity imaging)."]
+    },
+    {
+      "key": "sandrin2003",
+      "authors": [{"family": "Sandrin", "given": "L"}, {"family": "Fourquet", "given": "B"}, {"family": "Hasquenoph", "given": "J M"}, {"family": "Yon", "given": "S"}, {"family": "Fournier", "given": "C"}, {"family": "Mal", "given": "F"}, {"family": "Christidis", "given": "C"}, {"family": "Ziol", "given": "M"}, {"family": "Poulet", "given": "B"}, {"family": "Kazemi", "given": "F"}, {"family": "Beaugrand", "given": "M"}, {"family": "Palau", "given": "R"}],
+      "title": "Transient elastography: a new noninvasive method for assessment of hepatic fibrosis",
+      "year": 2003, "venue": "Ultrasound Med Biol", "volume": "29", "number": "12", "pages": "1705-1713",
+      "doi": "10.1016/j.ultrasmedbio.2003.07.001", "pmid": "14698338", "type": "article-journal",
+      "facts": ["Усули эластографияи гузаранда (transient elastography, FibroScan) барои арзёбии фибрози ҷигар."]
+    },
+    {
+      "key": "itoh2006",
+      "authors": [{"family": "Itoh", "given": "A"}, {"family": "Ueno", "given": "E"}, {"family": "Tohno", "given": "E"}, {"family": "Kamma", "given": "H"}, {"family": "Takahashi", "given": "H"}, {"family": "Shiina", "given": "T"}, {"family": "Yamakawa", "given": "M"}, {"family": "Matsumura", "given": "T"}],
+      "title": "Breast disease: clinical application of US elastography for diagnosis",
+      "year": 2006, "venue": "Radiology", "volume": "239", "number": "2", "pages": "341-350",
+      "doi": "10.1148/radiol.2391041676", "pmid": "16484352", "type": "article-journal",
+      "facts": ["Таҳқиқи бунёдии эластография дар ташхиси бемориҳои сина; ҷадвали 5-холаи визуалӣ (Tsukuba score)."]
+    },
+    {
+      "key": "friedrich2008",
+      "authors": [{"family": "Friedrich-Rust", "given": "M"}, {"family": "Ong", "given": "M F"}, {"family": "Martens", "given": "S"}, {"family": "Sarrazin", "given": "C"}, {"family": "Bojunga", "given": "J"}, {"family": "Zeuzem", "given": "S"}, {"family": "Herrmann", "given": "E"}],
+      "title": "Performance of transient elastography for the staging of liver fibrosis: a meta-analysis",
+      "year": 2008, "venue": "Gastroenterology", "volume": "134", "number": "4", "pages": "960-974",
+      "doi": "10.1053/j.gastro.2008.01.034", "pmid": "18395077", "type": "article-journal",
+      "facts": [
+        "50 таҳқиқот ворид карда шудааст.",
+        "AUROC барои фибрози назаррас: 0,84 (95 % ДИ: 0,82–0,86).",
+        "AUROC барои фибрози шадид: 0,89 (95 % ДИ: 0,88–0,91).",
+        "AUROC барои сирроз: 0,94 (95 % ДИ: 0,93–0,95).",
+        "Дар фибрози назаррас парокандагии AUROC аз бемории аслӣ вобаста аст (P < 0,001)."
+      ]
+    },
+    {
+      "key": "bavu2011",
+      "authors": [{"family": "Bavu", "given": "E"}, {"family": "Gennisson", "given": "J L"}, {"family": "Couade", "given": "M"}, {"family": "Bercoff", "given": "J"}, {"family": "Mallet", "given": "V"}, {"family": "Fink", "given": "M"}, {"family": "Badel", "given": "A"}, {"family": "Vallet-Pichard", "given": "A"}, {"family": "Nalpas", "given": "B"}, {"family": "Tanter", "given": "M"}, {"family": "Pol", "given": "S"}],
+      "title": "Noninvasive in vivo liver fibrosis evaluation using supersonic shear imaging: a clinical study on 113 hepatitis C virus patients",
+      "year": 2011, "venue": "Ultrasound Med Biol", "volume": "37", "number": "9", "pages": "1361-1373",
+      "doi": "10.1016/j.ultrasmedbio.2011.05.016", "pmid": "21775051", "type": "article-journal",
+      "facts": [
+        "113 бемори гирифтори гепатити музмини C.",
+        "Нишондиҳандаҳои чандирӣ бо SSI: 4,50–33,96 кПа; бо FibroScan: 2,60–46,50 кПа.",
+        "AUROC (SSI) барои F ≥ 2: 0,948; F ≥ 3: 0,962; F = 4: 0,968.",
+        "AUROC (FibroScan) барои F ≥ 2: 0,846; F ≥ 3: 0,857; F = 4: 0,940.",
+        "Мувофиқати марҳилаи фиброз ва чандирӣ бо ANOVA: p < 10⁻⁵."
+      ]
+    },
+    {
+      "key": "friedrich2012",
+      "authors": [{"family": "Friedrich-Rust", "given": "M"}, {"family": "Nierhoff", "given": "J"}, {"family": "Lupsor", "given": "M"}, {"family": "Sporea", "given": "I"}, {"family": "Fierbinteanu-Braticevici", "given": "C"}, {"family": "Strobel", "given": "D"}, {"family": "Takahashi", "given": "H"}, {"family": "Yoneda", "given": "M"}, {"family": "Suda", "given": "T"}, {"family": "Zeuzem", "given": "S"}, {"family": "Herrmann", "given": "E"}],
+      "title": "Performance of Acoustic Radiation Force Impulse imaging for the staging of liver fibrosis: a pooled meta-analysis",
+      "year": 2012, "venue": "J Viral Hepat", "volume": "19", "number": "2", "pages": "e212-219",
+      "doi": "10.1111/j.1365-2893.2011.01537.x", "pmid": "22239521", "type": "meta-analysis",
+      "facts": [
+        "8 таҳқиқот бо маълумоти инфиродӣ, 518 бемор.",
+        "AUROC барои фибрози назаррас (F ≥ 2): 0,87.",
+        "AUROC барои фибрози шадид (F ≥ 3): 0,91.",
+        "AUROC барои сирроз (F = 4): 0,93."
+      ]
+    },
+    {
+      "key": "bamber2013",
+      "authors": [{"family": "Bamber", "given": "J"}, {"family": "Cosgrove", "given": "D"}, {"family": "Dietrich", "given": "C F"}, {"family": "Fromageau", "given": "J"}, {"family": "Bojunga", "given": "J"}, {"family": "Calliada", "given": "F"}, {"family": "Cantisani", "given": "V"}, {"family": "Correas", "given": "J M"}, {"family": "D'Onofrio", "given": "M"}, {"family": "Drakonaki", "given": "E E"}],
+      "title": "EFSUMB guidelines and recommendations on the clinical use of ultrasound elastography. Part 1: Basic principles and technology",
+      "year": 2013, "venue": "Ultraschall Med", "volume": "34", "number": "2", "pages": "169-184",
+      "doi": "10.1055/s-0033-1335205", "pmid": "23558397", "type": "article-journal",
+      "facts": [
+        "Дастурамали аврупоӣ (EFSUMB) оид ба принсипҳо ва технологияи эластография.",
+        "Тасниф: эластографияи деформатсионӣ (strain) ва эластографияи мавҷи буриш (shear wave)."
+      ]
+    },
+    {
+      "key": "cosgrove2013",
+      "authors": [{"family": "Cosgrove", "given": "D"}, {"family": "Piscaglia", "given": "F"}, {"family": "Bamber", "given": "J"}, {"family": "Bojunga", "given": "J"}, {"family": "Correas", "given": "J M"}, {"family": "Gilja", "given": "O H"}, {"family": "Klauser", "given": "A S"}, {"family": "Sporea", "given": "I"}, {"family": "Calliada", "given": "F"}, {"family": "Cantisani", "given": "V"}],
+      "title": "EFSUMB guidelines and recommendations on the clinical use of ultrasound elastography. Part 2: Clinical applications",
+      "year": 2013, "venue": "Ultraschall Med", "volume": "34", "number": "3", "pages": "238-253",
+      "doi": "10.1055/s-0033-1335375", "pmid": "23605169", "type": "article-journal",
+      "facts": ["Дастурамали EFSUMB оид ба истифодаи клиникӣ: ҷигар, сина, ғадуди сипаршакл, ғадуди простата, гиреҳҳои лимфавӣ."]
+    },
+    {
+      "key": "gennisson2013",
+      "authors": [{"family": "Gennisson", "given": "J L"}, {"family": "Deffieux", "given": "T"}, {"family": "Fink", "given": "M"}, {"family": "Tanter", "given": "M"}],
+      "title": "Ultrasound elastography: principles and techniques",
+      "year": 2013, "venue": "Diagn Interv Imaging", "volume": "94", "number": "5", "pages": "487-495",
+      "doi": "10.1016/j.diii.2013.01.022", "pmid": "23619292", "type": "article-journal",
+      "facts": ["Шарҳи принсипҳои физикӣ: мавҷҳои буриш, суръати мавҷ, модули Юнг ва чандирӣ бо кПа."]
+    },
+    {
+      "key": "nierhoff2013",
+      "authors": [{"family": "Nierhoff", "given": "J"}, {"family": "Chavez Ortiz", "given": "A A"}, {"family": "Herrmann", "given": "E"}, {"family": "Zeuzem", "given": "S"}, {"family": "Friedrich-Rust", "given": "M"}],
+      "title": "The efficiency of acoustic radiation force impulse imaging for the staging of liver fibrosis: a meta-analysis",
+      "year": 2013, "venue": "Eur Radiol", "volume": "23", "number": "11", "pages": "3040-3053",
+      "doi": "10.1007/s00330-013-2927-6", "pmid": "23801420", "type": "meta-analysis",
+      "facts": ["Мета-таҳлили самаранокии ARFI барои марҳилабандии фибрози ҷигар (ҷустуҷӯ то феврали 2012)."]
+    },
+    {
+      "key": "chon2012",
+      "authors": [{"family": "Chon", "given": "Y E"}, {"family": "Choi", "given": "E H"}, {"family": "Song", "given": "K J"}, {"family": "Park", "given": "J Y"}, {"family": "Kim", "given": "D Y"}, {"family": "Han", "given": "K H"}, {"family": "Chon", "given": "C Y"}, {"family": "Ahn", "given": "S H"}, {"family": "Kim", "given": "S U"}],
+      "title": "Performance of transient elastography for the staging of liver fibrosis in patients with chronic hepatitis B: a meta-analysis",
+      "year": 2012, "venue": "PLoS One", "volume": "7", "number": "9", "pages": "e44930",
+      "doi": "10.1371/journal.pone.0044930", "pmid": "23049764", "type": "meta-analysis",
+      "facts": ["Мета-таҳлили эластографияи гузаранда дар беморони гирифтори гепатити музмини B."]
+    },
+    {
+      "key": "easl2015",
+      "authors": [{"family": "European Association for Study of Liver", "given": ""}],
+      "title": "EASL-ALEH Clinical Practice Guidelines: Non-invasive tests for evaluation of liver disease severity and prognosis",
+      "year": 2015, "venue": "J Hepatol", "volume": "63", "number": "1", "pages": "237-264",
+      "doi": "10.1016/j.jhep.2015.04.006", "pmid": "25911335", "type": "article-journal",
+      "facts": ["Дастурамали расмии EASL-ALEH оид ба санҷишҳои ғайриинвазивии бемориҳои ҷигар."]
+    },
+    {
+      "key": "shiina2015",
+      "authors": [{"family": "Shiina", "given": "T"}, {"family": "Nightingale", "given": "K R"}, {"family": "Palmeri", "given": "M L"}, {"family": "Hall", "given": "T J"}, {"family": "Bamber", "given": "J C"}, {"family": "Barr", "given": "R G"}, {"family": "Castera", "given": "L"}, {"family": "Choi", "given": "B I"}, {"family": "Chou", "given": "Y H"}, {"family": "Cosgrove", "given": "D"}],
+      "title": "WFUMB guidelines and recommendations for clinical use of ultrasound elastography: Part 1: basic principles and terminology",
+      "year": 2015, "venue": "Ultrasound Med Biol", "volume": "41", "number": "5", "pages": "1126-1147",
+      "doi": "10.1016/j.ultrasmedbio.2015.03.009", "pmid": "25805059", "type": "article-journal",
+      "facts": ["Дастурамали ҷаҳонии WFUMB: истилоҳот ва принсипҳои бунёдии эластография."]
+    },
+    {
+      "key": "barr2015",
+      "authors": [{"family": "Barr", "given": "R G"}, {"family": "Nakashima", "given": "K"}, {"family": "Amy", "given": "D"}, {"family": "Cosgrove", "given": "D"}, {"family": "Farrokh", "given": "A"}, {"family": "Schafer", "given": "F"}, {"family": "Bamber", "given": "J C"}, {"family": "Castera", "given": "L"}, {"family": "Choi", "given": "B I"}, {"family": "Chou", "given": "Y H"}],
+      "title": "WFUMB guidelines and recommendations for clinical use of ultrasound elastography: Part 2: breast",
+      "year": 2015, "venue": "Ultrasound Med Biol", "volume": "41", "number": "5", "pages": "1148-1160",
+      "doi": "10.1016/j.ultrasmedbio.2015.03.008", "pmid": "25795620", "type": "article-journal",
+      "facts": ["Дастурамали WFUMB оид ба эластографияи сина."]
+    },
+    {
+      "key": "ferraioli2015",
+      "authors": [{"family": "Ferraioli", "given": "G"}, {"family": "Filice", "given": "C"}, {"family": "Castera", "given": "L"}, {"family": "Choi", "given": "B I"}, {"family": "Sporea", "given": "I"}, {"family": "Wilson", "given": "S R"}, {"family": "Cosgrove", "given": "D"}, {"family": "Dietrich", "given": "C F"}, {"family": "Amy", "given": "D"}, {"family": "Bamber", "given": "J C"}],
+      "title": "WFUMB guidelines and recommendations for clinical use of ultrasound elastography: Part 3: liver",
+      "year": 2015, "venue": "Ultrasound Med Biol", "volume": "41", "number": "5", "pages": "1161-1179",
+      "doi": "10.1016/j.ultrasmedbio.2015.03.007", "pmid": "25800942", "type": "article-journal",
+      "facts": ["Дастурамали WFUMB оид ба эластографияи ҷигар: нишондодҳо, маҳдудиятҳо, протоколи ченкунӣ."]
+    },
+    {
+      "key": "liu2015nafld",
+      "authors": [{"family": "Liu", "given": "H"}, {"family": "Fu", "given": "J"}, {"family": "Hong", "given": "R"}, {"family": "Liu", "given": "L"}, {"family": "Li", "given": "F"}],
+      "title": "Acoustic Radiation Force Impulse Elastography for the Non-Invasive Evaluation of Hepatic Fibrosis in Non-Alcoholic Fatty Liver Disease Patients: A Systematic Review & Meta-Analysis",
+      "year": 2015, "venue": "PLoS One", "volume": "10", "number": "7", "pages": "e0127782",
+      "doi": "10.1371/journal.pone.0127782", "pmid": "26131717", "type": "meta-analysis",
+      "facts": ["Мета-таҳлили ARFI дар бемории чарбуи ғайриалкогулии ҷигар (NAFLD)."]
+    },
+    {
+      "key": "zhan2015",
+      "authors": [{"family": "Zhan", "given": "J"}, {"family": "Jin", "given": "J M"}, {"family": "Diao", "given": "X H"}, {"family": "Chen", "given": "Y"}],
+      "title": "Acoustic radiation force impulse imaging (ARFI) for differentiation of benign and malignant thyroid nodules--A meta-analysis",
+      "year": 2015, "venue": "Eur J Radiol", "volume": "84", "number": "11", "pages": "2181-2186",
+      "doi": "10.1016/j.ejrad.2015.07.015", "pmid": "26259701", "type": "meta-analysis",
+      "facts": [
+        "16 таҳқиқот, 2436 гиреҳ, 2147 бемор.",
+        "Ҳассосияти умумии ARFI: 0,80 (95 % ДИ: 0,73–0,87).",
+        "Махсусияти умумии ARFI: 0,85 (95 % ДИ: 0,80–0,90).",
+        "Масоҳати зери каҷ (AUC): 0,91."
+      ]
+    },
+    {
+      "key": "liu2015thyroid",
+      "authors": [{"family": "Liu", "given": "B J"}, {"family": "Li", "given": "D D"}, {"family": "Xu", "given": "H X"}, {"family": "Guo", "given": "L H"}, {"family": "Zhang", "given": "Y F"}, {"family": "Xu", "given": "J M"}, {"family": "Liu", "given": "C"}, {"family": "Liu", "given": "L N"}, {"family": "Li", "given": "X L"}, {"family": "Xu", "given": "X H"}],
+      "title": "Quantitative Shear Wave Velocity Measurement on Acoustic Radiation Force Impulse Elastography for Differential Diagnosis between Benign and Malignant Thyroid Nodules: A Meta-analysis",
+      "year": 2015, "venue": "Ultrasound Med Biol", "volume": "41", "number": "12", "pages": "3035-3043",
+      "doi": "10.1016/j.ultrasmedbio.2015.08.003", "pmid": "26371402", "type": "meta-analysis",
+      "facts": ["Мета-таҳлили ченкунии миқдории суръати мавҷи буриш дар гиреҳҳои ғадуди сипаршакл."]
+    },
+    {
+      "key": "li2016",
+      "authors": [{"family": "Li", "given": "Y"}, {"family": "Huang", "given": "Y S"}, {"family": "Wang", "given": "Z Z"}, {"family": "Yang", "given": "Z R"}, {"family": "Sun", "given": "F"}, {"family": "Zhan", "given": "S Y"}, {"family": "Liu", "given": "X E"}, {"family": "Zhuang", "given": "H"}],
+      "title": "Systematic review with meta-analysis: the diagnostic accuracy of transient elastography for the staging of liver fibrosis in patients with chronic hepatitis B",
+      "year": 2016, "venue": "Aliment Pharmacol Ther", "volume": "43", "number": "4", "pages": "458-469",
+      "doi": "10.1111/apt.13488", "pmid": "26669632", "type": "meta-analysis",
+      "facts": ["Шарҳи систематикии дақиқии эластографияи гузаранда дар гепатити музмини B."]
+    },
+    {
+      "key": "haugen2016",
+      "authors": [{"family": "Haugen", "given": "B R"}, {"family": "Alexander", "given": "E K"}, {"family": "Bible", "given": "K C"}, {"family": "Doherty", "given": "G M"}, {"family": "Mandel", "given": "S J"}, {"family": "Nikiforov", "given": "Y E"}, {"family": "Pacini", "given": "F"}, {"family": "Randolph", "given": "G W"}, {"family": "Sawka", "given": "A M"}, {"family": "Schlumberger", "given": "M"}],
+      "title": "2015 American Thyroid Association Management Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer",
+      "year": 2016, "venue": "Thyroid", "volume": "26", "number": "1", "pages": "1-133",
+      "doi": "10.1089/thy.2015.0020", "pmid": "26462967", "type": "article-journal",
+      "facts": ["Дастурамали ATA оид ба идоракунии гиреҳҳои ғадуди сипаршакл."]
+    },
+    {
+      "key": "dietrich2017",
+      "authors": [{"family": "Dietrich", "given": "C F"}, {"family": "Bamber", "given": "J"}, {"family": "Berzigotti", "given": "A"}, {"family": "Bota", "given": "S"}, {"family": "Cantisani", "given": "V"}, {"family": "Castera", "given": "L"}, {"family": "Cosgrove", "given": "D"}, {"family": "Ferraioli", "given": "G"}, {"family": "Friedrich-Rust", "given": "M"}, {"family": "Gilja", "given": "O H"}],
+      "title": "EFSUMB Guidelines and Recommendations on the Clinical Use of Liver Ultrasound Elastography, Update 2017 (Long Version)",
+      "year": 2017, "venue": "Ultraschall Med", "volume": "38", "number": "4", "pages": "e16-e47",
+      "doi": "10.1055/s-0043-103952", "pmid": "28407655", "type": "article-journal",
+      "facts": ["Навсозии дастурамали EFSUMB оид ба эластографияи ҷигар (2017)."]
+    },
+    {
+      "key": "hu2017",
+      "authors": [{"family": "Hu", "given": "X"}, {"family": "Qiu", "given": "L"}, {"family": "Liu", "given": "D"}, {"family": "Qian", "given": "L"}],
+      "title": "Acoustic Radiation Force Impulse (ARFI) Elastography for non-invasive evaluation of hepatic fibrosis in chronic hepatitis B and C patients: a systematic review and meta-analysis",
+      "year": 2017, "venue": "Med Ultrason", "volume": "19", "number": "1", "pages": "23-31",
+      "doi": "10.11152/mu-942", "pmid": "28180193", "type": "meta-analysis",
+      "facts": ["Мета-таҳлили ARFI дар гепатити музмини B ва C."]
+    },
+    {
+      "key": "russ2017",
+      "authors": [{"family": "Russ", "given": "G"}, {"family": "Bonnema", "given": "S J"}, {"family": "Erdogan", "given": "M F"}, {"family": "Durante", "given": "C"}, {"family": "Ngu", "given": "R"}, {"family": "Leenhardt", "given": "L"}],
+      "title": "European Thyroid Association Guidelines for Ultrasound Malignancy Risk Stratification of Thyroid Nodules in Adults: The EU-TIRADS",
+      "year": 2017, "venue": "Eur Thyroid J", "volume": "6", "number": "5", "pages": "225-237",
+      "doi": "10.1159/000478927", "pmid": "29167761", "type": "article-journal",
+      "facts": ["Дастурамали аврупоии EU-TIRADS: табақабандии хавфи гиреҳҳои ғадуди сипаршакл."]
+    },
+    {
+      "key": "sigrist2017",
+      "authors": [{"family": "Sigrist", "given": "R M S"}, {"family": "Liau", "given": "J"}, {"family": "Kaffas", "given": "A E"}, {"family": "Chammas", "given": "M C"}, {"family": "Willmann", "given": "J K"}],
+      "title": "Ultrasound Elastography: Review of Techniques and Clinical Applications",
+      "year": 2017, "venue": "Theranostics", "volume": "7", "number": "5", "pages": "1303-1329",
+      "doi": "10.7150/thno.18650", "pmid": "28435467", "type": "article-journal",
+      "facts": [
+        "Таснифи асосӣ: усулҳои деформатсионӣ (strain imaging) ва усулҳои мавҷи буриш (shear wave imaging).",
+        "Истифодаи клиникӣ: ҷигар, сина, ғадуди сипаршакл, ғадуди простата, гурда ва гиреҳҳои лимфавӣ."
+      ]
+    },
+    {
+      "key": "kim2018",
+      "authors": [{"family": "Kim", "given": "J R"}, {"family": "Suh", "given": "C H"}, {"family": "Yoon", "given": "H M"}, {"family": "Lee", "given": "J S"}, {"family": "Cho", "given": "Y A"}, {"family": "Jung", "given": "A Y"}],
+      "title": "The diagnostic performance of shear-wave elastography for liver fibrosis in children and adolescents: A systematic review and diagnostic meta-analysis",
+      "year": 2018, "venue": "Eur Radiol", "volume": "28", "number": "3", "pages": "1175-1186",
+      "doi": "10.1007/s00330-017-5078-3", "pmid": "29018925", "type": "meta-analysis",
+      "facts": [
+        "12 таҳқиқот, 550 бемор.",
+        "Ҳассосияти ҷамъбастӣ барои фибрози назаррас: 81 % (95 % ДИ: 71–88).",
+        "Махсусияти ҷамъбастӣ: 91 % (95 % ДИ: 83–96).",
+        "SSI нисбат ба ARFI ҳассосият ва махсусияти баландтар дошт (p < 0,01)."
+      ]
+    },
+    {
+      "key": "saftoiu2019",
+      "authors": [{"family": "Saftoiu", "given": "A"}, {"family": "Gilja", "given": "O H"}, {"family": "Sidhu", "given": "P S"}, {"family": "Dietrich", "given": "C F"}, {"family": "Cantisani", "given": "V"}, {"family": "Amy", "given": "D"}, {"family": "Bachmann-Nielsen", "given": "M"}, {"family": "Bob", "given": "F"}, {"family": "Bojunga", "given": "J"}, {"family": "Brock", "given": "M"}],
+      "title": "The EFSUMB Guidelines and Recommendations for the Clinical Practice of Elastography in Non-Hepatic Applications: Update 2018",
+      "year": 2019, "venue": "Ultraschall Med", "volume": "40", "number": "4", "pages": "425-453",
+      "doi": "10.1055/a-0838-9937", "pmid": "31238377", "type": "article-journal",
+      "facts": ["Дастурамали EFSUMB оид ба эластография дар ғайр аз ҷигар: сина, ғадуди сипаршакл, простата, гурда, гиреҳҳои лимфавӣ, бофтаҳои нарм."]
+    },
+    {
+      "key": "lin2020",
+      "authors": [{"family": "Lin", "given": "Y"}, {"family": "Li", "given": "H"}, {"family": "Jin", "given": "C"}, {"family": "Wang", "given": "H"}, {"family": "Jiang", "given": "B"}],
+      "title": "The diagnostic accuracy of liver fibrosis in non-viral liver diseases using acoustic radiation force impulse elastography: A systematic review and meta-analysis",
+      "year": 2020, "venue": "PLoS One", "volume": "15", "number": "1", "pages": "e0227358",
+      "doi": "10.1371/journal.pone.0227358", "pmid": "31940395", "type": "meta-analysis",
+      "facts": ["Мета-таҳлили ARFI дар бемориҳои ғайривирусии ҷигар."]
+    },
+    {
+      "key": "who2026",
+      "authors": [{"family": "World Health Organization", "given": ""}],
+      "title": "Hepatitis B (информационный бюллетень ВОЗ)",
+      "year": 2026, "venue": "WHO", "pages": "",
+      "doi": "", "url": "https://www.who.int/news-room/fact-sheets/detail/hepatitis-b",
+      "pmid": "", "type": "webpage",
+      "facts": [
+        "Дар соли 2024 тақрибан 240 миллион нафар бо гепатити музмини B зиндагӣ мекарданд.",
+        "Ҳар сол тақрибан 0,9 миллион ҳолати нави сироят ба қайд гирифта мешавад.",
+        "Дар соли 2024 гепатити B боиси тақрибан 1,1 миллион фавт гардид (асосан аз сирроз ва карсиномаи ҳуҷайраҳои ҷигар).",
+        "ВОЗ барои арзёбии дараҷаи фибрози ҷигар усули эластографияро қайд мекунад."
+      ]
+    }
+  ]
+}
