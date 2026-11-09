@@ -82,6 +82,25 @@ quarto render
 quarto render article --to pdf
 ```
 
+## Automated Thesis Writing
+
+The repository also contains `diploma/` — a Russian-language automation system that
+turns a topic into a finished DOCX and PDF: outline, verified scientific sources
+(Crossref, OpenAlex, arXiv, Semantic Scholar), academic text with checkable
+citations, tables, charts and figures with numbered captions, a ГОСТ Р 7.0.5-2008
+bibliography, and a web interface for downloading the result.
+
+```bash
+cd diploma
+pip install -r requirements.txt
+make demo          # demo build in diploma/build/demo
+make web           # web interface with downloads
+```
+
+Nothing is invented: every DOI is verified against the registry, every plotted
+number is extracted from a verified source, and simulated data is labelled as a
+teaching example. See [diploma/README.md](diploma/README.md) for details.
+
 ## Structure
 
 - `_quarto.yml` defines the root Quarto documentation website.

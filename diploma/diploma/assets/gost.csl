@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="ru-RU">
+  <info>
+    <title>ГОСТ Р 7.0.5-2008 (numeric, упрощённая схема)</title>
+    <title-short>ГОСТ Р 7.0.5-2008</title-short>
+    <id>http://diploma.local/styles/gost-r-7-0-5-2008-numeric</id>
+    <link href="http://diploma.local/styles/gost-r-7-0-5-2008-numeric" rel="self"/>
+    <author>
+      <name>Система автоматизации подготовки курсовых и дипломных работ</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="generic-base"/>
+    <summary>Числовой стиль по ГОСТ Р 7.0.5-2008: авторы, заглавие, // издание,
+      год, том, страницы, DOI. Используется в экспорте Quarto/Pandoc.</summary>
+    <updated>2026-11-09T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</rights>
+  </info>
+
+  <locale xml:lang="ru">
+    <terms>
+      <term name="and others">и др.</term>
+      <term name="et-al">и др.</term>
+      <term name="in">//</term>
+      <term name="page-range-delimiter">-</term>
+    </terms>
+  </locale>
+  <locale xml:lang="en">
+    <terms>
+      <term name="and others">et al.</term>
+      <term name="in">//</term>
+      <term name="page-range-delimiter">-</term>
+    </terms>
+  </locale>
+
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout delimiter=", ">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+    </layout>
+  </citation>
+
+  <bibliography second-field-align="flush">
+    <sort>
+      <key macro="author-sort"/>
+      <key variable="issued" sort="ascending"/>
+      <key variable="title"/>
+    </sort>
+    <layout>
+      <text variable="citation-number" suffix=". "/>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title"/>
+      </group>
+      <text macro="container" prefix=" // "/>
+      <text macro="issued" prefix=". — "/>
+      <text macro="volume-pages" prefix=". — "/>
+      <text macro="doi" prefix=". — "/>
+      <text macro="access" prefix=". — "/>
+      <text value="."/>
+    </layout>
+  </bibliography>
+
+  <macro name="author-sort">
+    <names variable="author">
+      <name form="short" name-as-sort-order="first"/>
+    </names>
+  </macro>
+
+  <macro name="author">
+    <names variable="author" delimiter=", ">
+      <name form="long" name-as-sort-order="all" sort-separator=" " initialize-with=". "
+            delimiter=", " and="symbol"/>
+      <et-al font-style="normal" term="and others"/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <choose>
+      <if type="chapter paper-conference" match="any">
+        <text variable="title" text-case="sentence"/>
+        <text variable="container-title" prefix=" // " text-case="title"/>
+      </if>
+      <else>
+        <text variable="title" text-case="sentence"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="container">
+    <choose>
+      <if type="chapter paper-conference" match="any">
+        <text variable="publisher" suffix=", "/>
+        <text variable="collection-title"/>
+      </if>
+      <else-if type="book thesis" match="any">
+        <text variable="publisher"/>
+      </else-if>
+      <else>
+        <text variable="container-title"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="volume-pages">
+    <group delimiter=". ">
+      <group delimiter=" ">
+        <text value="Т."/>
+        <text variable="volume"/>
+        <text variable="issue" prefix="№ "/>
+      </group>
+      <group delimiter=" ">
+        <text value="С."/>
+        <text variable="page"/>
+      </group>
+    </group>
+  </macro>
+
+  <macro name="doi">
+    <text variable="DOI" prefix="DOI: "/>
+  </macro>
+
+  <macro name="access">
+    <group delimiter=" ">
+      <text variable="URL" prefix="URL: "/>
+      <date variable="accessed" prefix="(дата обращения: " suffix=")">
+        <date-part name="day" form="numeric-leading-zeros"/>
+        <date-part name="month" form="numeric-leading-zeros" prefix="."/>
+        <date-part name="year" prefix="."/>
+      </date>
+    </group>
+  </macro>
+</style>

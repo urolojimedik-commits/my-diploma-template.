@@ -1,0 +1,7 @@
+# Результаты сборок (артефакты не коммитятся)
+build/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.ipynb_checkpoints/

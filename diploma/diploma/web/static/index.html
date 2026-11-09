@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Автоматизация подготовки курсовых и дипломных работ</title>
+		<link rel="stylesheet" href="/static/styles.css" />
+	</head>
+	<body>
+		<header class="topbar">
+			<div class="brand">
+				<span class="logo">◈</span>
+				<div>
+					<h1>Генератор курсовых и дипломных работ</h1>
+					<p class="sub">План → реальные источники → текст → таблицы и графики → DOCX и PDF</p>
+				</div>
+			</div>
+			<div class="badges">
+				<span class="badge">русский язык</span>
+				<span class="badge">проверка DOI</span>
+				<span class="badge">ГОСТ Р 7.0.5-2008</span>
+			</div>
+		</header>
+
+		<main>
+			<section class="card">
+				<h2>1. Тема и параметры работы</h2>
+				<form id="form">
+					<label class="field wide">
+						<span>Тема научной работы</span>
+						<textarea id="topic" name="topic" rows="3" required></textarea>
+					</label>
+					<div class="grid">
+						<label class="field">
+							<span>Тип работы</span>
+							<select id="work_type" name="work_type">
+								<option value="diploma">Дипломная работа (ВКР)</option>
+								<option value="bachelor">Бакалаврская работа</option>
+								<option value="master">Магистерская диссертация</option>
+								<option value="course">Курсовая работа</option>
+							</select>
+						</label>
+						<label class="field">
+							<span>Стиль списка литературы</span>
+							<select id="bib_style" name="bib_style">
+								<option value="gost">ГОСТ Р 7.0.5-2008</option>
+								<option value="apa">APA</option>
+								<option value="ieee">IEEE</option>
+								<option value="vancouver">Vancouver</option>
+							</select>
+						</label>
+						<label class="field">
+							<span>Автор</span>
+							<input id="author" name="author" value="Иванов И. И." />
+						</label>
+						<label class="field">
+							<span>Группа / шифр</span>
+							<input id="group" name="group" placeholder="МО-41" />
+						</label>
+						<label class="field">
+							<span>Кафедра</span>
+							<input id="chair" name="chair" placeholder="Кафедра урологии" />
+						</label>
+						<label class="field">
+							<span>Научный руководитель</span>
+							<input id="supervisor" name="supervisor" placeholder="Петров П. П." />
+						</label>
+						<label class="field">
+							<span>Учебное заведение</span>
+							<input id="institution" name="institution" placeholder="ФГБОУ ВО «Университет»" />
+						</label>
+						<label class="field">
+							<span>Город — год</span>
+							<div class="pair">
+								<input id="city" name="city" placeholder="Худжанд" />
+								<input id="year" name="year" type="number" placeholder="2026" />
+							</div>
+						</label>
+						<label class="field">
+							<span>Максимум источников</span>
+							<input id="max_sources" name="max_sources" type="number" value="20" min="3" max="60" />
+						</label>
+					</div>
+					<div class="checks">
+						<label><input type="checkbox" id="offline" /> автономный режим (без сети)</label>
+						<label><input type="checkbox" id="export_quarto" checked /> экспорт проекта Quarto</label>
+						<label><input type="checkbox" id="make_zip" checked /> ZIP-архив</label>
+					</div>
+					<button type="submit" id="run">Собрать работу</button>
+				</form>
+			</section>
+
+			<section class="card" id="progressCard" hidden>
+				<h2>2. Выполнение</h2>
+				<div class="progress"><div class="bar" id="bar"></div></div>
+				<p id="progressText" class="muted">—</p>
+				<ul id="steps" class="steps"></ul>
+			</section>
+
+			<section class="card" id="resultCard" hidden>
+				<h2>3. Готовые документы</h2>
+				<div id="stats" class="stats"></div>
+				<div id="files" class="files"></div>
+				<div id="warnings" class="warnings" hidden></div>
+			</section>
+
+			<section class="card muted-card">
+				<h2>Как это работает</h2>
+				<ol class="howto">
+					<li><b>План</b> строится из темы: главы, параграфы, цели разделов.</li>
+					<li><b>Источники</b> ищутся в Crossref / Semantic Scholar / OpenAlex / arXiv; офлайн
+						используется локальный проверенный корпус.</li>
+					<li><b>Проверка</b>: каждый DOI сверяется с реестром. Непроверенные источники в текст
+						не попадают — вместо ссылки ставится пометка «ТРЕБУЕТСЯ ИСТОЧНИК».</li>
+					<li><b>Графики</b> строятся по реальным показателям из проверенных работ либо по
+						данным, явно помеченным как учебный пример.</li>
+					<li><b>Выдача</b>: DOCX, PDF, HTML, BibTeX, исходный Markdown, проект Quarto, ZIP.</li>
+				</ol>
+			</section>
+		</main>
+
+		<footer>Не выдумываем источники, DOI и статистику. Проверяйте результат перед сдачей.</footer>
+		<script src="/static/app.js"></script>
+	</body>
+</html>
