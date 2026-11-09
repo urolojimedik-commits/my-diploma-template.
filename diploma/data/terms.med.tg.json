@@ -1,0 +1,361 @@
+{
+	"_meta": {
+		"version": "1.0",
+		"updated": "2026-11-09",
+		"source_language": "tg",
+		"note": "Тиббии тоҷикӣ ↔ русский ↔ английский. ambiguous=true → оригинал + варианты. PMID/DOI заполняются ТОЛЬКО после проверки (этап 5)."
+	},
+	"terms": {
+		"беморӣ": {
+			"source": "заболевание / disease",
+			"variants": ["беморӣ", "касалӣ"],
+			"preferred": "беморӣ",
+			"ambiguous": false
+		},
+		"бемор": {
+			"source": "больной, пациент / patient",
+			"variants": ["бемор", "пасиент"],
+			"preferred": "бемор",
+			"ambiguous": false
+		},
+		"ошкорсозӣ": {
+			"source": "выявление, детекция / detection",
+			"variants": ["ошкорсозӣ", "муайянкунӣ", "ташхис"],
+			"preferred": "ошкорсозӣ",
+			"ambiguous": true
+		},
+		"ташхис": {
+			"source": "диагностика / diagnosis",
+			"variants": ["ташхис", "ташхисгузорӣ", "диагностика"],
+			"preferred": "ташхис",
+			"ambiguous": false
+		},
+		"муолиҷа": {
+			"source": "лечение / treatment",
+			"variants": ["муолиҷа", "табобат", "дармон"],
+			"preferred": "муолиҷа",
+			"ambiguous": true
+		},
+		"ҷарроҳӣ": {
+			"source": "хирургическое вмешательство, операция / surgery",
+			"variants": ["ҷарроҳӣ", "амалиёт"],
+			"preferred": "ҷарроҳӣ",
+			"ambiguous": false
+		},
+		"омӯзиши мошинӣ": {
+			"source": "машинное обучение / machine learning",
+			"variants": ["омӯзиши мошинӣ", "ёдгирии мошинӣ", "machine learning"],
+			"preferred": "омӯзиши мошинӣ",
+			"ambiguous": true
+		},
+		"шабакаи нейронӣ": {
+			"source": "нейронная сеть / neural network",
+			"variants": ["шабакаи нейронӣ", "шабакаи асабӣ", "нейронӣ"],
+			"preferred": "шабакаи нейронӣ",
+			"ambiguous": false
+		},
+		"ёдгирии амиқ": {
+			"source": "глубокое обучение / deep learning",
+			"variants": ["ёдгирии амиқ", "омӯзиши амиқ", "deep learning"],
+			"preferred": "ёдгирии амиқ",
+			"ambiguous": true
+		},
+		"таҳлили тасвирҳо": {
+			"source": "анализ изображений / image analysis",
+			"variants": ["таҳлили тасвирҳо", "коркарди тасвир", "анализи аксҳо"],
+			"preferred": "таҳлили тасвирҳо",
+			"ambiguous": false
+		},
+		"санги гурда": {
+			"source": "почечный камень / kidney stone",
+			"variants": ["санги гурда", "уролитиаз", "нефролитиаз"],
+			"preferred": "санги гурда",
+			"ambiguous": false
+		},
+		"гурда": {
+			"source": "почка / kidney",
+			"variants": ["гурда"],
+			"preferred": "гурда",
+			"ambiguous": false
+		},
+		"пешоб": {
+			"source": "моча / urine",
+			"variants": ["пешоб", "наҷосати моеъ"],
+			"preferred": "пешоб",
+			"ambiguous": false
+		},
+		"пешоброҳа": {
+			"source": "мочевыводящие пути / urinary tract",
+			"variants": ["пешоброҳа", "роҳҳои пешоб"],
+			"preferred": "пешоброҳа",
+			"ambiguous": false
+		},
+		"масона": {
+			"source": "мочевой пузырь / bladder",
+			"variants": ["масона"],
+			"preferred": "масона",
+			"ambiguous": false
+		},
+		"урология": {
+			"source": "урология / urology",
+			"variants": ["урология"],
+			"preferred": "урология",
+			"ambiguous": false
+		},
+		"нефрология": {
+			"source": "нефрология / nephrology",
+			"variants": ["нефрология"],
+			"preferred": "нефрология",
+			"ambiguous": false
+		},
+		"томографияи компютерӣ": {
+			"source": "компьютерная томография / computed tomography",
+			"variants": ["томографияи компютерӣ", "КТ", "CT"],
+			"preferred": "томографияи компютерӣ",
+			"ambiguous": false
+		},
+		"томография": {
+			"source": "томография / tomography",
+			"variants": ["томография"],
+			"preferred": "томография",
+			"ambiguous": false
+		},
+		"рентгенография": {
+			"source": "рентгенография / radiography",
+			"variants": ["рентгенография", "рентген"],
+			"preferred": "рентгенография",
+			"ambiguous": false
+		},
+		"УЗИ": {
+			"source": "ультразвуковое исследование / ultrasound",
+			"variants": ["УЗИ", "таҳти садо", "ультрасадо", "сонография"],
+			"preferred": "УЗИ",
+			"ambiguous": true,
+			"expansion_tg": "таҳқиқоти ултрасадоӣ"
+		},
+		"таҳқиқот": {
+			"source": "исследование / study, research",
+			"variants": ["таҳқиқот", "тадқиқот"],
+			"preferred": "таҳқиқот",
+			"ambiguous": true
+		},
+		"интихоби тасодуфӣ": {
+			"source": "рандомизация / randomization",
+			"variants": ["интихоби тасодуфӣ", "рандомизатсия", "randomization"],
+			"preferred": "интихоби тасодуфӣ",
+			"ambiguous": true
+		},
+		"омӯзиши ретроспективӣ": {
+			"source": "ретроспективное исследование / retrospective study",
+			"variants": ["омӯзиши ретроспективӣ", "ретроспективӣ"],
+			"preferred": "омӯзиши ретроспективӣ",
+			"ambiguous": false
+		},
+		"омӯзиши ояндадор": {
+			"source": "проспективное исследование / prospective study",
+			"variants": ["омӯзиши ояндадор", "проспективӣ"],
+			"preferred": "омӯзиши ояндадор",
+			"ambiguous": true
+		},
+		"гурӯҳи назоратӣ": {
+			"source": "контрольная группа / control group",
+			"variants": ["гурӯҳи назоратӣ", "гурӯҳи контроль", "контрол"],
+			"preferred": "гурӯҳи назоратӣ",
+			"ambiguous": false
+		},
+		"ҳассосият": {
+			"source": "чувствительность (диагностического теста) / sensitivity",
+			"variants": ["ҳассосият", "sensitivity", "сенситивность"],
+			"preferred": "ҳассосият",
+			"ambiguous": false
+		},
+		"махсусият": {
+			"source": "специфичность / specificity",
+			"variants": ["махсусият", "вижагӣ", "specificity"],
+			"preferred": "махсусият",
+			"ambiguous": true
+		},
+		"дақиқӣ": {
+			"source": "точность / accuracy",
+			"variants": ["дақиқӣ", "дурустӣ", "accuracy", "аккуратность"],
+			"preferred": "дақиқӣ",
+			"ambiguous": true
+		},
+		"фосилаи эътимод": {
+			"source": "доверительный интервал / confidence interval",
+			"variants": ["фосилаи эътимод", "интервали эътимод", "95 % ДИ", "CI"],
+			"preferred": "фосилаи эътимод",
+			"ambiguous": false
+		},
+		"аҳамияти оморӣ": {
+			"source": "статистическая значимость / statistical significance",
+			"variants": ["аҳамияти оморӣ", "значимости статистикӣ"],
+			"preferred": "аҳамияти оморӣ",
+			"ambiguous": false
+		},
+		"инҳирофи меъёрӣ": {
+			"source": "стандартное отклонение / standard deviation",
+			"variants": ["инҳирофи меъёрӣ", "SD", "стандартное отклонение"],
+			"preferred": "инҳирофи меъёрӣ",
+			"ambiguous": false
+		},
+		"медиана": {
+			"source": "медиана / median",
+			"variants": ["медиана", "Me"],
+			"preferred": "медиана",
+			"ambiguous": false
+		},
+		"чоряк": {
+			"source": "квартиль / quartile",
+			"variants": ["чоряк", "квартил", "Q1; Q3"],
+			"preferred": "чоряк",
+			"ambiguous": false
+		},
+		"фавт": {
+			"source": "летальный исход, смерть / death",
+			"variants": ["фавт", "марг"],
+			"preferred": "фавт",
+			"ambiguous": true
+		},
+		"бемории музмин": {
+			"source": "хроническое заболевание / chronic disease",
+			"variants": ["бемории музмин", "хроникӣ"],
+			"preferred": "бемории музмин",
+			"ambiguous": false
+		},
+		"бемории шадид": {
+			"source": "острое заболевание / acute disease",
+			"variants": ["бемории шадид", "шадид"],
+			"preferred": "бемории шадид",
+			"ambiguous": false
+		},
+		"организм": {
+			"source": "организм / organism",
+			"variants": ["организм"],
+			"preferred": "организм",
+			"ambiguous": false
+		},
+		"таҳлили хун": {
+			"source": "анализ крови / blood test",
+			"variants": ["таҳлили хун", "санҷиши хун"],
+			"preferred": "таҳлили хун",
+			"ambiguous": false
+		},
+		"илтиҳоб": {
+			"source": "воспаление / inflammation",
+			"variants": ["илтиҳоб", "илтиҳобӣ"],
+			"preferred": "илтиҳоб",
+			"ambiguous": false
+		},
+		"сироят": {
+			"source": "инфекция / infection",
+			"variants": ["сироят", "инфексия"],
+			"preferred": "сироят",
+			"ambiguous": false
+		},
+		"табобати доруӣ": {
+			"source": "медикаментозная терапия / drug therapy",
+			"variants": ["табобати доруӣ", "муолиҷаи доруӣ", "фармакотерапия"],
+			"preferred": "табобати доруӣ",
+			"ambiguous": true
+		},
+		"мушкилот": {
+			"source": "осложнение / complication",
+			"variants": ["мушкилот", "мушкилӣ", "ориза"],
+			"preferred": "мушкилот",
+			"ambiguous": true
+		},
+		"пешгӯӣ": {
+			"source": "прогноз / prognosis, prediction",
+			"variants": ["пешгӯӣ", "прогноз", "пешбинӣ"],
+			"preferred": "пешгӯӣ",
+			"ambiguous": true
+		},
+		"намуна": {
+			"source": "образец, выборка / sample",
+			"variants": ["намуна", "интихоб", "выборка"],
+			"preferred": "намуна",
+			"ambiguous": true
+		},
+		"метод": {
+			"source": "метод / method",
+			"variants": ["метод", "усул", "роҳ"],
+			"preferred": "усул",
+			"ambiguous": true
+		},
+		"нишондиҳанда": {
+			"source": "показатель / indicator",
+			"variants": ["нишондиҳанда", "нишондиҳандаҳо"],
+			"preferred": "нишондиҳанда",
+			"ambiguous": false
+		},
+		"меъёр": {
+			"source": "критерий, норма / criterion, norm",
+			"variants": ["меъёр", "критерий"],
+			"preferred": "меъёр",
+			"ambiguous": true
+		},
+		"озмоиш": {
+			"source": "тест, проба / test",
+			"variants": ["озмоиш", "тест", "санҷиш"],
+			"preferred": "озмоиш",
+			"ambiguous": true
+		},
+		"асоснокӣ": {
+			"source": "обоснование / rationale",
+			"variants": ["асоснокӣ", "асос"],
+			"preferred": "асоснокӣ",
+			"ambiguous": false
+		},
+		"бозгашти беморӣ": {
+			"source": "рецидив / recurrence",
+			"variants": ["бозгашти беморӣ", "ресидив", "такроршавӣ"],
+			"preferred": "бозгашти беморӣ",
+			"ambiguous": true
+		},
+		"ҳаҷми интихоб": {
+			"source": "объём выборки / sample size",
+			"variants": ["ҳаҷми интихоб", "ҳаҷми намуна"],
+			"preferred": "ҳаҷми интихоб",
+			"ambiguous": false
+		},
+		"эътимоднокӣ": {
+			"source": "надёжность, достоверность / reliability",
+			"variants": ["эътимоднокӣ", "боэътимодӣ"],
+			"preferred": "эътимоднокӣ",
+			"ambiguous": false
+		},
+		"тахлили маълумот": {
+			"source": "анализ данных / data analysis",
+			"variants": ["таҳлили маълумот", "анализи додаҳо"],
+			"preferred": "таҳлили маълумот",
+			"ambiguous": true
+		},
+		"баррасии систематикӣ": {
+			"source": "систематический обзор / systematic review",
+			"variants": ["баррасии систематикӣ", "шарҳи систематикӣ"],
+			"preferred": "баррасии систематикӣ",
+			"ambiguous": false
+		},
+		"мета-таҳлил": {
+			"source": "мета-анализ / meta-analysis",
+			"variants": ["мета-таҳлил", "метаанализ"],
+			"preferred": "мета-таҳлил",
+			"ambiguous": false
+		},
+		"МРТ": {
+			"source": "магнитно-резонансная томография / MRI",
+			"variants": ["МРТ", "MRI", "томографияи магнитӣ-резонансӣ"],
+			"preferred": "МРТ",
+			"ambiguous": false,
+			"expansion_tg": "томографияи магнитӣ-резонансӣ"
+		},
+		"ЭКГ": {
+			"source": "электрокардиография / ECG",
+			"variants": ["ЭКГ", "ECG", "электрокардиография"],
+			"preferred": "ЭКГ",
+			"ambiguous": false,
+			"expansion_tg": "электрокардиография"
+		}
+	}
+}

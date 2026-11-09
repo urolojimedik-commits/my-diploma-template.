@@ -1,0 +1,75 @@
+# =============================================================================
+# Требования вашего университета
+# -----------------------------------------------------------------------------
+# Это ЕДИНСТВЕННЫЙ файл, который нужно поправить под ваш вуз: система читает
+# реквизиты и правила оформления отсюда, код при этом менять не нужно.
+# Названия разделов и служебные слова берутся из diploma/diploma/lang/*.py.
+# =============================================================================
+
+university:
+  # Ведомство (по-таджикски, как на титульном листе)
+  ministry: 'Вазорати тандурустӣ ва ҳифзи иҷтимоии аҳолии Ҷумҳурии Тоҷикистон'
+  name: 'Муассисаи давлатии таълимии «Донишгоҳи давлатии тиббии Хуҷанд»'
+  short_name: 'ДДТХ'
+  faculty: 'Факултети тиббӣ'
+  chair: 'Кафедраи ҷарроҳии умумӣ'
+  city: 'Хуҷанд'
+  country: 'Ҷумҳурии Тоҷикистон'
+
+work:
+  default_type: diploma # course | diploma | master
+  main_language: tg # основной язык текста
+  extra_annotation_languages: [ru] # аннотация дополнительно на русском
+  year: 2026
+
+layout:
+  page: A4
+  margins_mm: { left: 30, right: 15, top: 20, bottom: 20 }
+  font:
+    name: 'Times New Roman'
+    size_pt: 14
+    heading_size_pt: 14
+    line_spacing: 1.5
+    caption_size_pt: 12
+    table_size_pt: 11
+  first_line_indent_cm: 1.25
+  heading_1_align: center # заголовки глав — по центру
+  heading_2_align: left
+  chapter_new_page: true # каждая глава с новой страницы
+  page_number:
+    enabled: true
+    position: bottom
+    align: center
+    start_after_title_page: true
+
+gost:
+  bibliography: 'ГОСТ Р 7.0.5-2008' # библиографические записи
+  report: 'ГОСТ 7.32-2017' # структура отчёта о НИР
+  dissertation: 'ГОСТ Р 7.0.11-2011' # диссертация и автореферат
+  caption_style: gost # «Расм 2.1 — …», «Ҷадвал 2.2 — …»
+  numbering: per_chapter # 2.1 (по главам) | continuous (сквозная)
+  table_borders: horizontal_only # по ГОСТ: без вертикальных линий
+
+volumes:
+  course_pages: [25, 40]
+  diploma_pages: [50, 80]
+  master_pages: [80, 120]
+  sources_min: { course: 20, diploma: 40, master: 60 }
+  own_data_required: { course: false, diploma: true, master: true }
+
+required_sections:
+  - title # титульный лист
+  - contents # мундариҷа
+  - abbreviations # рӯйхати ихтисораҳо
+  - annotation # аннотатсия
+  - introduction # муқаддима
+  - chapters # бобҳо
+  - conclusion # хулоса
+  - recommendations # тавсияҳои амалӣ
+  - references # рӯйхати адабиёт
+  - appendices # замимаҳо
+
+optional_sections:
+  - list_of_figures
+  - list_of_tables
+  - ethics_approval

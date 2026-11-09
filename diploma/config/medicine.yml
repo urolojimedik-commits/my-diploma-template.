@@ -1,0 +1,92 @@
+# =============================================================================
+# Профиль «Медицина»: структура IMRAD, политика данных, источники, терминология
+# =============================================================================
+
+profile: medicine
+imrad: true
+
+# ---------------------------------------------------------------- структура
+structure:
+  course:
+    chapters: 2 # обзор литературы + материалы/методы/результаты
+    discussion_in_chapter: true
+  diploma:
+    chapters: 4 # обзор, материалы и методы, результаты, обсуждение
+    discussion_in_chapter: false
+  master:
+    chapters: 4
+    discussion_in_chapter: false
+
+sections:
+  annotation:
+    enabled: true
+    languages: [tg, ru]
+    words: [150, 250]
+    keywords: 5
+  abbreviations:
+    enabled: true
+    expand_at_first_use: true
+  introduction:
+    required_blocks: [relevance, goal, objectives, object, subject, methods, novelty, structure]
+  conclusion:
+    numbered: true
+    count: [3, 7]
+    only_from_claims: true # выводы только из подтверждённых данных
+  recommendations:
+    enabled: true
+    only_from_conclusions: true
+  appendices:
+    - verification_protocol # протокол проверки источников
+    - data_provenance # происхождение данных графиков
+
+# ---------------------------------------------------------- политика данных
+data_policy:
+  # Факты из публикаций и собственные данные автора НИКОГДА не смешиваются:
+  # у каждого утверждения есть метка происхождения.
+  labels:
+    source: source # из публикации (PMID/DOI)
+    own_data: own_data # собственные клинические данные автора
+    unknown: unknown # данных нет
+  missing_data:
+    marker_tg: 'Маълумот нокифоя'
+    marker_ru: 'Данные отсутствуют'
+    ask_questions: true # вместо генерации цифр задать вопросы автору
+    allow_placeholder_tables: true
+  own_data:
+    allowed_sections: [ch2, ch3] # Мавод ва усулҳо; Натиҷаҳо
+    require_ethics_block: true
+    require_consent_note: true
+    anonymize: true
+    min_n_warning: 30
+
+# ---------------------------------------------------------------- источники
+sources:
+  preferred_databases: [pubmed, europepmc, cochrane, crossref, who, openalex]
+  require_doi_or_pmid: true
+  verify_doi: true
+  verify_pmid: true
+  min_year: 2010
+  prefer_guidelines: true # клинические рекомендации приоритетны
+  guideline_sources: [WHO, МЗ РТ, EAU, ESC, AHA, KDIGO]
+  reject_unverified: true
+
+# ------------------------------------------------------------- терминология
+terminology:
+  dictionary: data/terms.med.tg.json
+  orthography: data/orthography.tg.yml
+  show_original_for_proposed: true # рядом с предложенным переводом — оригинал
+  on_ambiguous: glossary # glossary | footnote | ask
+  glossary_in_appendix: true
+
+# ---------------------------------------------------------------- статистика
+statistics:
+  decimal_separator: ','
+  thousands_separator: ' '
+  p_format: 'p<0,05' # шаблон порога значимости
+  p_value_decimals: 3
+  mean_sd: 'M±SD'
+  median_iqr: 'Me [Q1; Q3]'
+  ci_format: '95 % ДИ: {lo}–{hi}'
+  percent_decimals: 1
+  tests: [student, mann_whitney, chi_square, fisher, anova, kaplan_meier, log_rank]
+  significance_level: 0.05
