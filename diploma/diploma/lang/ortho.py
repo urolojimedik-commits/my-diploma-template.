@@ -29,7 +29,9 @@ BORROWED = {
     "ы", "ь", "ъ", "алгоритм", "биология", "физиология",
 }
 
-DECIMAL_POINT = re.compile(r"(?<=\d)\.(?=\d)")
+DECIMAL_POINT = re.compile(r"(?<![\d.,])(\d+)\.(\d{1,3})(?![\d.,])")
+# Идентификаторы (DOI, URL, десятичные дроби вроде 10.1155/2018) не трогаем
+PROTECTED = re.compile(r"https?://|doi:|10\.\d{4,9}/|/", re.IGNORECASE)
 PERCENT = re.compile(r"(?<=[\d,.])%")
 NO_SPACE_AFTER_COMMA = re.compile(r",(?=[^\s\d])")
 MULTISPACE = re.compile(r"[ \t]{2,}")
@@ -86,22 +88,58 @@ class Orthography:
         text = re.sub(r"\s+-\s+", f" {self.dash} ", text)
         text = MULTISPACE.sub(" ", text)
         if self.decimal_separator == ",":
-            text = DECIMAL_POINT.sub(",", text)
+            text = re.sub(r"\S+", lambda m: self._decimal_token(m.group(0)), text)
         if self.percent_space:
             text = PERCENT.sub(f"{self.percent_space}%", text)
         text = NO_SPACE_AFTER_COMMA.sub(", ", text)
         return text
 
+    @staticmethod
+    def _needs_comma(integer: str, fraction: str) -> bool:
+        """Нужно ли заменять точку на запятую.
+
+        «12.5» → да; «0.05» → да; «1.1» → нет: в таджикском (и русском) тексте
+        одинарные цифры через точку чаще означают номер раздела или рисунка.
+        """
+        return len(integer) >= 2 or len(fraction) >= 2
+
+    @classmethod
+    def _decimal_token(cls, token: str) -> str:
+        """Десятичная точка → запятая внутри «простых» чисел одного токена."""
+        if PROTECTED.search(token):
+            return token
+
+        def repl(m: re.Match) -> str:
+            prev = token[: m.start()]
+            nxt = token[m.end() :]
+            if prev and (prev[-1].isdigit() or prev[-1] in ".,"):
+                return m.group(0)
+            if nxt[:1].isdigit() or nxt[:1] == ".":
+                return m.group(0)
+            if not cls._needs_comma(m.group(1), m.group(2)):
+                return m.group(0)
+            return f"{m.group(1)},{m.group(2)}"
+
+        return re.sub(r"(\d+)\.(\d{1,3})", repl, token)
+
     # ---------------------------------------------------------------- проверки
     def check(self, text: str) -> list[Problem]:
         problems: list[Problem] = []
         if self.decimal_separator == ",":
-            for m in DECIMAL_POINT.finditer(text):
+            for m in re.finditer(r"(\d+)\.(\d{1,3})", text):
+                context = text[max(0, m.start() - 40) : m.end() + 40]
+                if PROTECTED.search(context):
+                    continue
+                if not self._needs_comma(m.group(1), m.group(2)):
+                    continue
                 frag = text[max(0, m.start() - 3) : m.end() + 3]
                 problems.append(
-                    Problem("decimal_comma", frag.strip(),
-                            "даҳӣ бо вергул навишта мешавад",
-                            frag.strip().replace(".", ","))
+                    Problem(
+                        "decimal_comma",
+                        frag.strip(),
+                        "даҳӣ бо вергул навишта мешавад",
+                        frag.strip().replace(".", ","),
+                    )
                 )
         for m in PERCENT.finditer(text):
             frag = text[max(0, m.start() - 5) : m.end()]
