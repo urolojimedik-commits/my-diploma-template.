@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US">
+  <info>
+    <title>Numeric Brackets (conference)</title>
+    <id>http://example.org/styles/numeric-brackets</id>
+    <link href="http://example.org/styles/numeric-brackets" rel="self"/>
+    <updated>2026-11-12T00:00:00+00:00</updated>
+    <category citation-format="numeric"/>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name name-as-sort-order="all"
+            sort-separator=" "
+            initialize-with=""
+            delimiter=", "
+            delimiter-precedes-last="never"
+            et-al-min="4"
+            et-al-use-first="3"/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="locators">
+    <group delimiter="">
+      <text variable="volume" font-style="normal"/>
+      <text variable="issue" prefix="(" suffix=")"/>
+      <text variable="page" prefix=":"/>
+    </group>
+  </macro>
+
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="false" entry-spacing="0" line-spacing="1">
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="] " vertical-align="baseline"/>
+      <group delimiter=". " suffix=".">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text variable="container-title" font-style="italic"/>
+        <group delimiter="">
+          <date variable="issued" suffix=";">
+            <date-part name="year"/>
+          </date>
+          <text macro="locators"/>
+        </group>
+        <text variable="URL"/>
+        <text variable="DOI" prefix="doi: "/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

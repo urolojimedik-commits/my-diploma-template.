@@ -1,26 +1,41 @@
-title: Title
-subtitle: Subtitle
+title: 'Влияние мутаций ДНК на развитие онкологических заболеваний: современные возможности терапии, ограничения и перспективы'
+subtitle: 'Аналитический обзор с позиции врача клинической лабораторной диагностики'
 author:
-  - Eleanor Roosevelt
-  - John Peters Humphrey
-date: 1 January 2023
-abstract: All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.
+  - name: '[Фамилия Имя Отчество]'
+    affiliation: '[Учреждение, город, страна]'
+    email: '[author@example.org]'
+date: '12 ноября 2026'
+abstract: >-
+  Злокачественные новообразования остаются второй по частоте причиной смерти в мире: в 2022 г.
+  зарегистрировано около 20 млн новых случаев и 9,7 млн смертей, а к 2050 г. прогнозируется рост
+  до 35 млн случаев в год. В основе опухолевого роста лежат соматические и герминальные мутации,
+  однако практическое значение имеет не сам факт изменения последовательности ДНК, а его тип,
+  сочетание с другими изменениями и способность опухоли к клональной эволюции. Цель работы —
+  обобщить данные о механизмах, связывающих мутации с развитием опухоли, оценить методы лечения,
+  вошедшие в практику за последние десять лет, и обозначить ограничения, определяющие их реальную
+  эффективность. Материал и методы: аналитический обзор 22 публикаций за 2000–2026 гг. по данным
+  PubMed/MEDLINE, Международного агентства по изучению рака и каталога COSMIC. Рассмотрены
+  таргетная терапия, включая ингибиторы KRAS G12C и реактиватор p53, иммунотерапия при dMMR/MSI-H,
+  CAR-T-терапия, конъюгаты антитело–цитостатик, индивидуальные неоантигенные вакцины, а также
+  жидкая биопсия и алгоритмы машинного обучения. Показано, что пользу от геном-таргетной терапии
+  получают единицы процентов больных метастатическим раком, а главными причинами неудач остаются
+  внутриопухолевая гетерогенность, отсутствие препаратов против ключевых супрессоров и
+  ограничения лабораторного звена. Сделан вывод о необходимости стандартизации молекулярной
+  диагностики и смещения усилий к раннему выявлению и профилактике.
+keywords:
+  - мутации ДНК
+  - онкогенез
+  - драйверные мутации
+  - таргетная терапия
+  - иммунотерапия
+  - жидкая биопсия
+  - молекулярная диагностика
+  - резистентность
 bibliography: references.bib
-csl: ../assets/csl/chicago-note-bibliography.csl
-nocite: |
-  @brown2016
-references:
-  - id: unitednations1948
-    author:
-      - literal: United Nations
-    citation-key: unitednations1948
-    issued:
-      - year: 1948
-        month: 12
-    title: Universal Declaration of Human Rights
-    type: book
-keywords: [keyword1, keyword2]
-toc-title: Contents
+csl: ../assets/csl/numeric-brackets.csl
+lang: ru-RU
+abstract-title: Аннотация
+toc-title: Содержание
 toc-depth: 2
-abstract-title: Abstract
-thanks: Many thanks for the valuable comments.
+link-citations: true
+color-links: true

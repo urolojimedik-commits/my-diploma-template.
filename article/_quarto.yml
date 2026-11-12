@@ -10,15 +10,15 @@ format:
     toc: true
   docx:
     output-file: article.docx
-    toc: true
+    toc: false
   pdf:
     output-file: article.pdf
-    pdf-engine: xelatex
+    pdf-engine: pdflatex
     documentclass: scrartcl
     keep-tex: false
-    toc: true
-    lof: true
-    lot: true
+    toc: false
+    lof: false
+    lot: false
     include-in-header:
       text: |
         \raggedbottom
@@ -32,5 +32,5 @@ format:
 execute:
   freeze: false
 
-lang: en-US
+lang: ru-RU
 syntax-highlighting: pygments
