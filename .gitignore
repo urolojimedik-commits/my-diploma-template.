@@ -232,3 +232,8 @@ $RECYCLE.BIN/
 **/*.quarto_ipynb
 /_site/
 **/index.tex
+
+# python / build artifacts
+.venv/
+__pycache__/
+*.pyc
