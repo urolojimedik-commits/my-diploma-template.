@@ -1,6 +1,6 @@
 # Курсӣ: «Роҳҳои омӯзиши сохтори ҷумла дар таълими забони англисӣ»
 
-Файли тайёр: **`coursework/out/Kori_kursi_sokhtori_jumla.docx`** (38 саҳифа, A4).
+Файли тайёр: **`coursework/docx/Kori_kursi_sokhtori_jumla.docx`** (38 саҳифа, A4).
 
 ## Сохтор
 | Қисм | Саҳифа |
@@ -21,7 +21,7 @@ Times New Roman 14 pt, интервали 1,5, матн аз рӯи бароба
 ## Сохтани дубора
 ```bash
 .venv/bin/python coursework/src/figures.py   # расмҳо -> coursework/figures/*.png
-.venv/bin/python coursework/src/build.py     # docx   -> coursework/out/Kori_kursi_sokhtori_jumla.docx
+.venv/bin/python coursework/src/build.py     # docx   -> coursework/docx/Kori_kursi_sokhtori_jumla.docx
 ```
 Барои сохтани docx танҳо `python-docx` лозим аст; барои расмҳо `matplotlib`.
 

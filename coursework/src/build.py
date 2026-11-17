@@ -24,7 +24,7 @@ import ch3
 import back
 
 TITLE = "Роҳҳои омӯзиши сохтори ҷумла дар таълими забони англисӣ"
-OUT_DIR = os.path.join(cw.BASE, "out")
+OUT_DIR = os.path.join(cw.BASE, "docx")
 DOCX = os.path.join(OUT_DIR, "Kori_kursi_sokhtori_jumla.docx")
 
 BODY = front.INTRO + ch1.BLOCKS + ch2.BLOCKS + ch3.BLOCKS + back.CONCLUSION + back.REFS
