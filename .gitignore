@@ -236,3 +236,10 @@ $RECYCLE.BIN/
 # build environment & scratch
 .venv/
 work/
+audit/__pycache__/
+audit/blocks.json
+audit/blocks_readable.txt
+audit/paras.json
+audit/raw_blocks.json
+audit/build_docx.py
+audit/reconstruct_broken.py
